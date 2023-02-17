@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../stylesheets/registerForm.css')
+  title Register
+#formDiv
+  center
+    h1 REGISTRATION FORM
+  form#formData(action='/register' method='POST')
+    label(for='username') NAME:
+    br
+    input#name(type='text' name='username' placeholder='Enter your name')
+    br
+    if errorInput === "username"
+        p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+    endif
+    label(for='email') EMAIL:
+    br
+    input#email(type='text' name='email' placeholder='Enter your email')
+    br
+    if errorInput === "email"
+        p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message}
+    endif
+    label(for='dob') DATE OF BIRTH:
+    br
+    input#dob(type='date' name='dob')
+    br
+    if errorInput === "dob"
+        p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+    endif
+    label(for='password') PASSWORD:
+    br
+    input#password(type='password' name='password' placeholder='Enter your password')
+    br
+    if errorInput === "password"
+        p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+    endif
+    label(for='password1') CONFIRM PASSWORD:
+    br
+    input#password1(type='password' name='password1' placeholder='Re-type password')
+    br
+    if errorInput === "password1"
+        p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+    endif
+    input#registerButton(type='submit' value='REGISTER')
+    br
+    input#clearButton(type='button' value='CLEAR')
+script.
+  document.getElementById("clearButton").onclick = function(){
+  window.location.reload(true)
+  }

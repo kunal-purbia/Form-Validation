@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../stylesheets/profile.css')
+  title Profile
+#formDiv
+  center
+    h1
+      | Hello, 
+      u #{user.username}
+    p
+      em
+        strong Below is your full profile details
+  #formData
+    form(action='/profile/update' method='POST')
+        h1(style={"color":"darkgreen"}) #{updateMessage}
+        label(for='username') NAME:
+        br
+        input#name(type='text' name='username' placeholder='Enter your name' value=user.username)
+        br
+        label(for='email') EMAIL:
+        br
+        input#email(type='text' name='email' placeholder='Enter your email' value=user.email)
+        br
+        label(for='dob') DATE OF BIRTH:
+        br
+        input#dob(type='date' name='dob' value=user.dob)
+        br
+        label(for='age') AGE:
+        br
+        input#dob(type='number' name='age' value=user.age)
+        br
+        label(for='password') PASSWORD:
+        br
+        input#password(type='password' name='password' placeholder='Enter your password' value=user.password)
+        br
+        label(for='password1') CONFIRM PASSWORD:
+        br
+        input#password1(type='password' name='password1' placeholder='Re-type password' value=user.password)
+        br
+        input#updateButton(type='submit' value='UPDATE')
+        br
+    form(action="/profile/delete", method="POST")
+        input#deleteButton(type='submit' value='DELETE') 

@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.center {
+  position: relative;
+  left: 25%;
+  background-color: lightblue;
+  width: 50%;
+  height: 30rem;
+  border: 3px solid black;
+  text-align: center;
+}
+
+.clickButton {
+  height: 75px;
+  width: 300px;
+  font-size: xx-large;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+#registerButton{
+  margin-top: 9rem;
+}

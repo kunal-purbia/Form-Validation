@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .center
+    form(action="/register/", method="GET") 
+      input(type="submit", class="clickButton", id="registerButton", value="REGISTER")
+
+    form(action="/login/", method="GET")
+      input(type="submit", class="clickButton", id="loginButton", value="LOGIN")
